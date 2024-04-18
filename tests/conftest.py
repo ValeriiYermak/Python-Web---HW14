@@ -22,6 +22,7 @@ TestingSessionLocal = async_sessionmaker(autocommit=False, autoflush=False, expi
 test_user = {"username": "deadpool", "email": "deadpool@google.com", "password": "12345678"}
 
 
+
 @pytest.fixture(scope="module", autouse=True)
 def init_models_wrap():
     async def init_models():

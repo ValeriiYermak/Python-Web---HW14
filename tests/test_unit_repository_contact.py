@@ -94,7 +94,7 @@ class TestAsyncContact(unittest.IsolatedAsyncioTestCase):
     #     result = await update_contact(1, body, self.session, self.user)
     #     self.assertIsInstance(result, Contact)
     #     self.assertEqual(result.name, body.name)
-
+    #
     # async def test_delete_contact(self):
     #     mocked_contact = MagicMock()
     #     mocked_contact.scalar_one_or_none.return_value = Contact(id=1,

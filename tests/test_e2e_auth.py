@@ -20,17 +20,17 @@ def test_signup(client, monkeypatch):
     assert data["email"] == user_data["email"]
     assert "password" not in data
     assert "avatar" in data
-#
-#
+
+
 # def test_repeat_signup(client, monkeypatch):
 #     mock_send_email = Mock()
 #     monkeypatch.setattr("src.routes.auth.send_email", mock_send_email)
 #     response = client.post("api/auth/signup", json=user_data)
 #     assert response.status_code == 409, response.text
 #     data = response.json()
-#     assert data["detail"] == messages.ACCOUNT_EXIST
-#
-#
+#     assert data["detail"] == messages.USER_ALREADY_EXISTS
+
+
 # def test_not_confirmed_login(client):
 #     response = client.post("api/auth/login", data={"username": user_data.get("email"), "password": user_data.get("password")})
 #     assert response.status_code == 401, response.text
@@ -62,14 +62,14 @@ async def test_login(client):
 #     data = response.json()
 #     assert data["detail"] == messages.INCORRECT_PASSWORD
 #
-#
+
 # def test_wrong_email_login(client):
 #     response = client.post("api/auth/login",
 #                            data={"username": "email", "password": user_data.get("password")})
 #     assert response.status_code == 401, response.text
 #     data = response.json()
 #     assert data["detail"] == messages.EMAIL_NOT_FOUND
-
+#
 
 def test_validation_error_login(client):
     response = client.post("api/auth/login",
